@@ -3,9 +3,9 @@ import React from 'react';
 import './menu-item.styles.scss';
 
 export const MenuItem = ({ title, imageUrl }) =>
-  <div className="menu-item">
+  <div className='menu-item'>
     <div
-      className="background-image"
+      className='background-image'
       style={{ backgroundImage: `url(${imageUrl})` }}
     ></div>
     <div className='content'>

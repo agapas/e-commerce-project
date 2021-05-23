@@ -6,6 +6,7 @@ import './homepage.styles.scss';
 
 const HomePage = () => (
   <div className='homepage'>
+    <div className='name'>Camera Shop</div>
     <Directory />
   </div>
 );

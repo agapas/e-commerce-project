@@ -3,10 +3,10 @@ import React from 'react';
 import { MenuItem } from '../menu-item/menu-item.component';
 
 import './directory.styles.scss';
-import SECTIONS_DATA from "../../data/sections.data.js";
+import SECTIONS_DATA from '../../data/sections.data.js';
 
 class Directory extends React.Component {
-  static displayName = "Directory";
+  static displayName = 'Directory';
   state = { sections: SECTIONS_DATA };
 
   render() {
