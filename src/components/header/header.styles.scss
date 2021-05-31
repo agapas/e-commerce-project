@@ -1,0 +1,35 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  .brand-container {
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 70px;
+      height: 70px;
+    }
+
+    .name {
+      margin-left: 15px;
+      font-size: xx-large;
+      font-weight: bold;
+    }
+  }
+
+  .menu-options {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50%;
+    padding-top: 15px;
+
+    .option {
+      padding-right: 10px;
+      font-size: large;
+    }
+  }
+}
