@@ -6,7 +6,7 @@ import { CollectionItem } from '../collection-item/collection-item.component';
 
 export const CollectionPreview = ({ title, items }) => (
   <div className='collection'>
-    <h1 className='title'>{title}</h1>
+    <div className='title'>{title}</div>
     <div className='preview'>
       {items.map(({ id, ...otherItemProps}) => (
         <CollectionItem key={id} {...otherItemProps} />
