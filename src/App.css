@@ -1,10 +1,11 @@
 body {
   font-family: "Open Sans Condensed", sans-serif;
+  color: #373748;
   background-color: aliceblue;
   padding: 20px 30px;
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: #373748;
 }
