@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid black;
-  margin: 0 7.5px 15px;
+  margin: 0 auto 15px;
   overflow: hidden;
 
   &:hover {
@@ -71,6 +71,7 @@
 @media screen and (min-width: 640px) {
   .menu-item {
     min-width: 40%;
+    margin: 0 7.5px 15px;
 
     .content .title {
       margin-bottom: 6px;
@@ -88,6 +89,7 @@
 @media screen and (min-width: 1024px) and (orientation: landscape) {
   .menu-item {
     min-width: 30%;
+    height: 280px;
 
     .content {
       padding: 10px 25px;
