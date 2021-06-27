@@ -5,6 +5,7 @@ import 'firebase/auth';
 const config = {
   apiKey: "AIzaSyAORgxesTgoDfdZDqf_VY1iEzyTaRDohbQ",
   authDomain: "camera-shop-db.firebaseapp.com",
+  databaseURL: "https://camera-shop-db.firebaseio.com",
   projectId: "camera-shop-db",
   storageBucket: "camera-shop-db.appspot.com",
   messagingSenderId: "80115904774",
