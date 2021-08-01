@@ -2,7 +2,6 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
   color: #373748;
   background-color: aliceblue;
-  padding: 20px 30px;
 }
 
 a {
@@ -12,4 +11,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.app {
+  margin: 20px 30px;
 }

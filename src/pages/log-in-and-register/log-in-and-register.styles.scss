@@ -1,0 +1,11 @@
+.log-in-and-register {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+  .log-in-and-register {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

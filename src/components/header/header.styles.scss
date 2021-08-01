@@ -1,8 +1,6 @@
 .header {
-  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   margin-bottom: 20px;
 
   .brand-container {
@@ -22,10 +20,9 @@
   }
 
   .menu-options {
+    padding-top: 15px;
     display: flex;
     align-items: center;
-    width: 100%;
-    padding-top: 15px;
 
     .option {
       padding-right: 10px;
@@ -37,11 +34,11 @@
 
 @media screen and (min-width: 640px) {
   .header {
-    flex-flow: row wrap;
+    flex-direction: row;
+    justify-content: space-between;
 
     .menu-options {
-      width: 50%;
-      justify-content: flex-end;
+      padding-top: 5px;
     }
   }
 }

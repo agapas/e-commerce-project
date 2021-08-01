@@ -1,5 +1,4 @@
 .login {
-  width: 380px;
   display: flex;
   flex-direction: column;
 
@@ -13,6 +12,17 @@
 
   .buttons-container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+  .login {
+    width: calc(0.5 * (100vw - 90px));
+
+    .buttons-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 }
