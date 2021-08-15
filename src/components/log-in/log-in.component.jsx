@@ -7,7 +7,7 @@ import { signInWithGoogle } from '../../firebase/firebase.utils';
 
 import './log-in.styles.scss';
 
-class LogIn extends React.Component {
+export class LogIn extends React.Component {
   static displayName = 'LogIn';
   state = {
     email: '',
@@ -59,5 +59,3 @@ class LogIn extends React.Component {
     );
   }
 }
-
-export default LogIn;

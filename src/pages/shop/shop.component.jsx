@@ -7,7 +7,7 @@ import {
   CollectionPreview
 } from '../../components/collection-preview/collection-preview.component';
 
-class ShopPage extends React.Component {
+export class ShopPage extends React.Component {
   static displayName = 'ShopPage';
   state = { collections: SHOP_DATA };
 
@@ -22,5 +22,3 @@ class ShopPage extends React.Component {
     );
   }
 }
-
-export default ShopPage;
