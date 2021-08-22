@@ -35,6 +35,7 @@ export class LogIn extends React.Component {
           <FormInput
             name='email'
             type='email'
+            autoComplete='username'
             onChange={this.onChange}
             value={this.state.email}
             label='Email'
@@ -43,6 +44,7 @@ export class LogIn extends React.Component {
           <FormInput
             name='password'
             type='password'
+            autoComplete='current-password'
             value={this.state.password}
             onChange={this.onChange}
             label='Password'

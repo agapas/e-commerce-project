@@ -54,7 +54,7 @@ export class Register extends React.Component {
         <div className='info'>Register with your email and password</div>
         <form className='register-form' onSubmit={this.onSubmit}>
           <FormInput
-            name='name'
+            name='displayName'
             type='text'
             onChange={this.onChange}
             value={displayName}
@@ -64,6 +64,7 @@ export class Register extends React.Component {
           <FormInput
             name='email'
             type='email'
+            autoComplete='username'
             onChange={this.onChange}
             value={email}
             label='Email'
@@ -72,6 +73,7 @@ export class Register extends React.Component {
           <FormInput
             name='password'
             type='password'
+            autoComplete='new-password'
             value={password}
             onChange={this.onChange}
             label='Password'
@@ -80,6 +82,7 @@ export class Register extends React.Component {
           <FormInput
             name='confirmPassword'
             type='password'
+            autoComplete='new-password'
             value={confirmPassword}
             onChange={this.onChange}
             label='Confirm Password'
