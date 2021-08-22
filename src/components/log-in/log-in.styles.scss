@@ -1,6 +1,7 @@
 .login {
   display: flex;
   flex-direction: column;
+  margin-bottom: 15px;
 
   .title {
     margin-bottom: 15px;
@@ -18,11 +19,18 @@
 
 @media screen and (min-width: 1024px) and (orientation: landscape) {
   .login {
-    width: calc(0.5 * (100vw - 90px));
+    width: calc(0.5 * (100vw - 350px));
+    margin-bottom: 0;
+  }
+}
 
-    .buttons-container {
-      flex-direction: row;
-      justify-content: space-between;
+@media screen and (min-width: 1200px) and (orientation: landscape) {
+  .login .buttons-container {
+    flex-direction: row;
+    justify-content: space-between;
+
+    .custom-button {
+      width: calc(50% - 8px);
     }
   }
 }

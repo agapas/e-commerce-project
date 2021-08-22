@@ -1,0 +1,20 @@
+.register {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+
+  .title {
+    margin-bottom: 15px;
+  }
+
+  .info {
+    padding-bottom: 8px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (orientation: landscape) {
+  .register {
+    width: calc(0.5 * (100vw - 350px));
+    margin-bottom: 0;
+  }
+}
