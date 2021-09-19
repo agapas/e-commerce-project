@@ -11,12 +11,15 @@ import './cart-dropdown.styles.scss';
 const CartDropdown = ({ cartItems }) => (
   <div className='cart-dropdown'>
     <div className='cart-items'>
-      {cartItems.map((cartItem, index) => {
-        const className = index === 0 ? '' : 'with-offset';
-        return (
-          <CartItem key={cartItem.id} item={cartItem} className={className} />
-        );
-      })}
+      {cartItems.length
+        ? cartItems.map((cartItem, index) => {
+            const className = index === 0 ? '' : 'with-offset';
+            return (
+              <CartItem key={cartItem.id} item={cartItem} className={className} />
+            );
+          })
+        : (<div className='empty-cart'>Your cart is empty</div>)
+      }
     </div>
     <CustomButton>Go to Checkout</CustomButton>
   </div>

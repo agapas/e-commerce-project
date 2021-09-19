@@ -11,7 +11,7 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #4285f442;
+    background-color: white;
     border: 1px solid black;
   }
 
@@ -60,5 +60,17 @@
 @media screen and (min-width: 1024px) and (orientation: landscape) {
   .collection-item {
     width: calc(25% - 20px);
+  }
+}
+
+@media screen and (min-width: 1367px) {
+  .collection-item .image {
+    background-color: #4285f442;
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .collection-item .image {
+    height: 300px;
   }
 }
