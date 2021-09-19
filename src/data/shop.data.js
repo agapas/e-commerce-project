@@ -10,19 +10,19 @@ const SHOP_DATA = [
         id: 1,
         name: 'Canon EOS 80D Camera Body with 18-135mm f/3.5-5.6 IS USM Lens | Black',
         imageDirectory: 'assets/images/shop/dslr/canon-eos-80d',
-        price: '1,399.00'
+        price: '1399.00'
       },
       {
         id: 2,
         name: 'Nikon D780 with AF-S 24-85mm ED VR Lens | Black',
         imageDirectory: 'assets/images/shop/dslr/nikon-d780',
-        price: '2,899.00'
+        price: '2899.00'
       },
       {
         id: 3,
         name: 'Pentax K-1 Mark II with 24-70mm F2.8 Lens | Black',
         imageDirectory: 'assets/images/shop/dslr/pentax-k1',
-        price: '2,800.00'
+        price: '2800.00'
       },
       {
         id: 4,
@@ -41,7 +41,7 @@ const SHOP_DATA = [
         id: 5,
         name: 'Sony Alpha a7 III Digital Camera with 28-70mm Lens | Black',
         imageDirectory: 'assets/images/shop/mirrorless/sony-alpha-a7',
-        price: '2,499.00'
+        price: '2499.00'
       },
       {
         id: 6,
@@ -53,13 +53,13 @@ const SHOP_DATA = [
         id: 7,
         name: 'Leica M10-P Edition Safari Camera Body',
         imageDirectory: 'assets/images/shop/mirrorless/leica-m10-p',
-        price: '8,109.00'
+        price: '8109.00'
       },
       {
         id: 8,
         name: 'Sigma FP L Digital Camera Body',
         imageDirectory: 'assets/images/shop/mirrorless/sigma-fp-l',
-        price: '2,299.00'
+        price: '2299.00'
       }
     ]
   },

@@ -9,10 +9,12 @@ import { selectCurrentUser } from './redux/user/user.selector';
 
 import './App.css';
 
+import Header from './components/header/header.component';
+
+import CheckoutPage from './pages/checkout/checkout.component';
 import { HomePage } from './pages/homepage/homepage.component';
 import { LogInAndRegisterPage } from './pages/log-in-and-register/log-in-and-register.component';
 import { ShopPage } from './pages/shop/shop.component';
-import Header from './components/header/header.component';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -46,6 +48,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
+          <Route exact path='/checkout' component={CheckoutPage} />
           <Route exact path='/login'
             render={() =>
               this.props.currentUser ? (
