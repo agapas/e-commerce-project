@@ -11,10 +11,7 @@
 
   .image {
     width: 84px;
-    height: 84px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+    object-fit: scale-down;
     background-color: white;
     border: 1px solid black;
   }

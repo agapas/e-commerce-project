@@ -8,16 +8,30 @@
     width: 100%;
     padding: 10px 0;
     display: flex;
-    justify-content: space-between;
     border-bottom: 1px solid darkgrey;
 
     .header-item {
       text-transform: uppercase;
+      width: 18%;
 
-      &:last-child {
-        width: 45px;
+      &.large {
+        width: 23%;
+      }
+
+      &.xl {
+        width: 33%;
+      }
+
+      &.xs {
+        width: 8%;
+        display: flex;
+        justify-content: flex-end;
       }
     }
+  }
+
+  .checkout-items {
+    width: 100%;
   }
 
   .total {
