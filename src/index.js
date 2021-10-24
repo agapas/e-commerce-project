@@ -12,8 +12,8 @@ import App from './App';
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <PersistGate persistor={persistor}>
+    <BrowserRouter basename={'/e-commerce-project/'}>
+      <PersistGate loading={null} persistor={persistor}>
         <App />
       </PersistGate>
     </BrowserRouter>
