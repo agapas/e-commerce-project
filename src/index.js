@@ -9,8 +9,11 @@ import { store, persistor } from './redux/store';
 import './index.css';
 import App from './App';
 
-const pathName = window.location.pathname;
-export const BASE_URL = pathName.endsWith('/') ? pathName : `${pathName}/`;
+// Temporary fix for displaying images in dev and production (on Github Pages)
+// in the case when HashRouter and session storage are used together
+export const BASE_URL = process.env.NODE_ENV === 'development'
+  ? '/e-commerce-project/'
+  : '';
 
 ReactDOM.render(
   <Provider store={store}>
