@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { BASE_URL } from '../../';
 import { CustomButton } from '../custom-button/custom-button.component';
 import { addItem } from '../../redux/cart/cart.actions';
 
@@ -12,7 +13,7 @@ const CollectionItem = ({ item, addItem }) => {
   <div className='collection-item'>
     <div
       className='image'
-      style={{ backgroundImage: `url(${imageDirectory}/1.jpg)` }}
+      style={{ backgroundImage: `url(${BASE_URL}${imageDirectory}/1.jpg)` }}
     />
     <div className='collection-footer'>
       <span className='name'>{name}</span>

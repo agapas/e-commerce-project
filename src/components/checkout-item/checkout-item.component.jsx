@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { BASE_URL } from '../../';
 import { clearItemFromCart, addItem, removeItem } from '../../redux/cart/cart.actions';
 
 import './checkout-item.styles.scss';
@@ -10,7 +11,7 @@ const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
   return (
     <div className='checkout-item'>
       <div className='image-container'>
-        <img src={`${imageDirectory}/1.jpg`} alt='item' />
+        <img src={`${BASE_URL}${imageDirectory}/1.jpg`} alt='item' />
       </div>
       <div className='name'>{name}</div>
       <div className='quantity'>
