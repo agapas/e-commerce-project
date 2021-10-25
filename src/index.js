@@ -12,8 +12,8 @@ import App from './App';
 // Temporary fix for displaying images in dev and production (on Github Pages)
 // in the case when HashRouter and session storage are used together
 export const BASE_URL = process.env.NODE_ENV === 'development'
-  ? '/e-commerce-project/'
-  : '';
+  ? `${window.location.pathname}/`
+  : window.location.pathname;
 
 ReactDOM.render(
   <Provider store={store}>
