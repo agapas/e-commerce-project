@@ -12,11 +12,11 @@ import App from './App';
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter basename={'/e-commerce-project/'}>
-      <PersistGate loading={null} persistor={persistor}>
+    <PersistGate loading={null} persistor={persistor}>
+      <BrowserRouter basename={'/e-commerce-project'}>
         <App />
-      </PersistGate>
-    </BrowserRouter>
+      </BrowserRouter>
+    </PersistGate>
   </Provider>,
   document.getElementById('root')
 );

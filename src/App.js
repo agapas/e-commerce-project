@@ -42,6 +42,7 @@ class App extends React.Component {
   }
 
   render() {
+    console.log("=================== process.env.PUBLIC_URL: ", process.env.PUBLIC_URL);
     return (
       <div className='app'>
         <Header />
