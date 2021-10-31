@@ -1,4 +1,4 @@
-import SECTIONS_DATA from '../../data/sections.data';
+import SECTIONS_DATA from './directory.data';
 
 const INITIAL_STATE = { sections: SECTIONS_DATA };
 
