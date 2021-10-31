@@ -14,7 +14,7 @@ import Header from './components/header/header.component';
 import CheckoutPage from './pages/checkout/checkout.component';
 import { HomePage } from './pages/homepage/homepage.component';
 import { LogInAndRegisterPage } from './pages/log-in-and-register/log-in-and-register.component';
-import ShopPage from './pages/shop/shop.component';
+import { ShopPage } from './pages/shop/shop.component';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
