@@ -1,7 +1,7 @@
 /* Used as starting data for ShopPage */
 
-const SHOP_DATA = [
-  {
+const SHOP_DATA = {
+  dslr: {
     id: 1,
     title: 'Digital SLR Cameras',
     routeName: 'dslr',
@@ -32,7 +32,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  mirrorless: {
     id: 2,
     title: 'Mirrorless Cameras',
     routeName: 'mirrorless',
@@ -63,7 +63,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  bridge: {
     id: 3,
     title: 'Bridge Cameras',
     routeName: 'bridge',
@@ -94,7 +94,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  compact: {
     id: 4,
     title: 'Compact Cameras',
     routeName: 'compact',
@@ -125,7 +125,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  instant: {
     id: 5,
     title: 'Instant Cameras',
     routeName: 'instant',
@@ -156,7 +156,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  action: {
     id: 6,
     title: 'GoPro & Action Cameras',
     routeName: 'action',
@@ -187,6 +187,6 @@ const SHOP_DATA = [
       }
     ]
   }
-];
+};
 
 export default SHOP_DATA;
