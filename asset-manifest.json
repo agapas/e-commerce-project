@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/e-commerce-project/static/css/main.945e9ba0.chunk.css",
+    "main.css": "/e-commerce-project/static/css/main.bc56a650.chunk.css",
     "main.js": "/e-commerce-project/static/js/main.8902308b.chunk.js",
     "main.js.map": "/e-commerce-project/static/js/main.8902308b.chunk.js.map",
     "runtime-main.js": "/e-commerce-project/static/js/runtime-main.36177548.js",
@@ -8,7 +8,7 @@
     "static/js/2.cdef9f5d.chunk.js": "/e-commerce-project/static/js/2.cdef9f5d.chunk.js",
     "static/js/2.cdef9f5d.chunk.js.map": "/e-commerce-project/static/js/2.cdef9f5d.chunk.js.map",
     "index.html": "/e-commerce-project/index.html",
-    "static/css/main.945e9ba0.chunk.css.map": "/e-commerce-project/static/css/main.945e9ba0.chunk.css.map",
+    "static/css/main.bc56a650.chunk.css.map": "/e-commerce-project/static/css/main.bc56a650.chunk.css.map",
     "static/js/2.cdef9f5d.chunk.js.LICENSE.txt": "/e-commerce-project/static/js/2.cdef9f5d.chunk.js.LICENSE.txt",
     "static/media/logo.062c3dca.svg": "/e-commerce-project/static/media/logo.062c3dca.svg",
     "static/media/shopping-bag.a688874f.svg": "/e-commerce-project/static/media/shopping-bag.a688874f.svg"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.36177548.js",
     "static/js/2.cdef9f5d.chunk.js",
-    "static/css/main.945e9ba0.chunk.css",
+    "static/css/main.bc56a650.chunk.css",
     "static/js/main.8902308b.chunk.js"
   ]
 }
