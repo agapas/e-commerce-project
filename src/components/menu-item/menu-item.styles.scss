@@ -52,7 +52,7 @@
 
 @media screen and (max-width: 300px) {
   .menu-item .content {
-    width: calc(40vw - 10px);
+    min-width: 100px;
 
     .title {
       font-size: medium;
