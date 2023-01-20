@@ -7,7 +7,7 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selectors';
 
-import './App.css';
+import './App.scss';
 
 import Header from './components/header/header.component';
 

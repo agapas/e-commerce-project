@@ -6,7 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import { store, persistor } from './redux/store';
 
-import './index.css';
+import './index.scss';
 import App from './App';
 
 // Temporary fix for displaying images in dev and production (on Github Pages)
