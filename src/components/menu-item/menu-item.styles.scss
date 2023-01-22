@@ -7,6 +7,7 @@
   border: 1px solid black;
   margin: 0 auto 15px;
   overflow: hidden;
+  color: black;
 
   &:hover {
     & .background-image {
@@ -17,6 +18,9 @@
     & .content {
       opacity: 0.9;
     }
+
+    color: #007ae5;
+    font-weight: bold;
   }
 
   .background-image {
@@ -44,7 +48,6 @@
     }
 
     .subtitle {
-      color: black;
       font-size: 16px;
     }
   }

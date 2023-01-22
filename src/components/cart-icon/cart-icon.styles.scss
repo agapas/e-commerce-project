@@ -9,9 +9,13 @@
   justify-content: center;
   cursor: pointer;
 
-  .shopping-icon {
+  svg.shopping-icon {
     width: 26px;
     height: 26px;
+
+    path {
+      fill: #010002;
+    }
   }
 
   .items-count {
@@ -19,5 +23,13 @@
     font-size: 14px;
     font-weight: bold;
     bottom: 0;
+  }
+
+  &:hover {
+    color: #007ae5;
+
+    svg path {
+      fill: #007ae5;
+    }
   }
 }

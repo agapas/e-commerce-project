@@ -3,15 +3,24 @@ body {
   background-color: aliceblue;
 }
 
-a {
-  text-decoration: none;
-  color: #373748;
-}
-
 * {
   box-sizing: border-box;
 }
 
 .app {
   min-width: 300px;
+}
+
+a {
+  text-decoration: none;
+  color: #373748;
+
+  .title,
+  > .title,
+  > .name {
+    &:hover {
+      color: #007ae5;
+      font-weight: bold;
+    }
+  }
 }
