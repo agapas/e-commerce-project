@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './collection-preview.styles.scss';
 
 import CollectionItem from '../collection-item/collection-item.component';
 
-export const CollectionPreview = ({ title, items }) => (
+export const CollectionPreview = ({ title, items, routeName }) => (
   <div className='collection'>
-    <div className='title'>{title}</div>
+    <Link className='title' to={`/shop/${routeName}`}>{title}</Link>
     <div className='preview'>
       {items.map(item => (
         <CollectionItem key={item.id} item={item} />
