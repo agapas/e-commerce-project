@@ -1,96 +1,104 @@
-import React from 'react';
+import React, { useState } from "react";
 
-import { CustomButton } from '../custom-button/custom-button.component';
-import { FormInput } from '../form-input/form-input.component';
+import { CustomButton } from "../custom-button/custom-button.component";
+import { FormInput } from "../form-input/form-input.component";
 
-import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
+import {
+  createUserDocumentFromAuth,
+  createAuthUserWithEmailAndPassword,
+} from "../../utils/firebase";
 
-import './register.styles.scss';
+import "./register.styles.scss";
 
-const defaultState = {
-  displayName: '',
-  email: '',
-  password: '',
-  confirmPassword: '',
+const defaultFormFields = {
+  displayName: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
 };
 
-export class Register extends React.Component {
-  static displayName = 'Register';
-  state = defaultState;
+export const Register = () => {
+  const [formFields, setFormFields] = useState(defaultFormFields);
+  const { displayName, email, password, confirmPassword } = formFields;
 
-  onSubmit = async event => {
+  const onSubmit = async (event) => {
     event.preventDefault();
 
-    const { displayName, email, password, confirmPassword } = this.state;
-
-    if(password !== confirmPassword) {
-      alert("passwords don't match");
+    if (password !== confirmPassword) {
+      alert("passwords do not match");
       return;
     }
 
     try {
-      const { user } = await auth.createUserWithEmailAndPassword(
+      const { user } = await createAuthUserWithEmailAndPassword(
         email,
         password
       );
-      await createUserProfileDocument(user, { displayName });
-      this.setState(defaultState);
-
-    } catch(error) {
-      console.error(error);
+      await createUserDocumentFromAuth(user, { displayName });
+      setFormFields(defaultFormFields);
+    } catch (error) {
+      if (error.code === "auth/email-already-in-use") {
+        alert("cannot create user, email already in use");
+      } else {
+        console.log("user creation error", error);
+      }
     }
-  }
+  };
 
-  onChange = event => {
+  const onChange = (event) => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
-  }
+    setFormFields({ ...formFields, [name]: value });
+  };
 
-  render() {
-    const { displayName, email, password, confirmPassword } = this.state;
-    return (
-      <div className='register'>
-        <h2 className='title'>I do not have an account</h2>
-        <div className='info'>Register with your email and password</div>
-        <form className='register-form' onSubmit={this.onSubmit}>
-          <FormInput
-            name='displayName'
-            type='text'
-            onChange={this.onChange}
-            value={displayName}
-            label='Display Name'
-            required
-          />
-          <FormInput
-            name='email'
-            type='email'
-            autoComplete='username'
-            onChange={this.onChange}
-            value={email}
-            label='Email'
-            required
-          />
-          <FormInput
-            name='password'
-            type='password'
-            autoComplete='new-password'
-            value={password}
-            onChange={this.onChange}
-            label='Password'
-            required
-          />
-          <FormInput
-            name='confirmPassword'
-            type='password'
-            autoComplete='new-password'
-            value={confirmPassword}
-            onChange={this.onChange}
-            label='Confirm Password'
-            required
-          />
-          <CustomButton type='submit'>Create Account</CustomButton>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="register">
+      <h2 className="title">I do not have an account</h2>
+      <div className="info">Register with your email and password</div>
+      <form className="register-form" onSubmit={onSubmit}>
+        <FormInput
+          label="Display Name"
+          inputOptions={{
+            name: "displayName",
+            type: "text",
+            required: true,
+            value: displayName,
+            onChange,
+          }}
+        />
+        <FormInput
+          label="Email"
+          inputOptions={{
+            name: "email",
+            type: "email",
+            required: true,
+            value: email,
+            onChange,
+          }}
+        />
+        <FormInput
+          label="Password"
+          inputOptions={{
+            name: "password",
+            type: "password",
+            required: true,
+            autoComplete: "new-password",
+            value: password,
+            onChange,
+          }}
+        />
+        <FormInput
+          label="Confirm Password"
+          inputOptions={{
+            name: "confirmPassword",
+            type: "password",
+            required: true,
+            autoComplete: "new-password",
+            value: confirmPassword,
+            onChange,
+          }}
+        />
+        <CustomButton type="submit">Create Account</CustomButton>
+      </form>
+    </div>
+  );
+};

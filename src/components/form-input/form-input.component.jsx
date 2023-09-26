@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import './form-input.styles.scss';
+import "./form-input.styles.scss";
 
-export const FormInput = ({ onChange, label, ...otherProps }) => {
-  const labelClass = `form-input-label ${otherProps.value.length ? 'shrink' : ''}`;
+export const FormInput = ({ label, inputOptions }) => {
   return (
-    <div className='group'>
-      <input className='form-input' onChange={onChange} {...otherProps} />
-      {label
-        ? <label className={labelClass}>{label}</label>
-        : null
-      }
+    <div className="form-input-group">
+      <input {...inputOptions} />
+      {label && (
+        <label className={inputOptions.value.length ? "shrink" : ""}>
+          {label}
+        </label>
+      )}
     </div>
-  )
+  );
 };

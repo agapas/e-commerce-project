@@ -1,74 +1,113 @@
-import React from 'react';
+import { useState } from "react";
+// import { getRedirectResult } from "firebase/auth";
 
-import { CustomButton } from '../custom-button/custom-button.component';
-import { FormInput } from '../form-input/form-input.component';
+import { CustomButton } from "../custom-button/custom-button.component";
+import { FormInput } from "../form-input/form-input.component";
 
-import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
+import {
+  // auth,
+  // signInWithGoogleRedirect,
+  signInWithGoogle,
+  createUserDocumentFromAuth,
+  signInAuthUserWithEmailAndPassword,
+} from "../../utils/firebase";
 
-import './log-in.styles.scss';
+import "./log-in.styles.scss";
 
-export class LogIn extends React.Component {
-  static displayName = 'LogIn';
-  state = {
-    email: '',
-    password: ''
+const defaultFormFields = {
+  email: "",
+  password: "",
+};
+
+export const LogIn = () => {
+  const [formFields, setFormFields] = useState(defaultFormFields);
+  const { email, password } = formFields;
+
+  // useEffect(
+  //   () => async () => {
+  //     const response = await getRedirectResult(auth);
+  //     if (response) {
+  //       const userDocRef = await createUserDocumentFromAuth(response.user);
+  //     }
+  //   },
+  //   []
+  // );
+
+  const logGoogleUser = async () => {
+    const { user } = await signInWithGoogle();
+    await createUserDocumentFromAuth(user);
   };
 
-  onSubmit = async event => {
+  const onSubmit = async (event) => {
     event.preventDefault();
 
-    const { email, password } = this.state;
-
     try {
-      await auth.signInWithEmailAndPassword(email, password);
-      this.setState({ email: '', password: '' });
+      await signInAuthUserWithEmailAndPassword(email, password);
+      setFormFields(defaultFormFields);
     } catch (error) {
-      console.error(error);
+      switch (error.code) {
+        case "auth/wrong-password":
+          alert("incorrect password for email");
+          break;
+        case "auth/user-not-found":
+          alert("no user associated with this email");
+          break;
+        default:
+          console.log(error);
+      }
     }
-  }
+  };
 
-  onChange = event => {
+  const onChange = (event) => {
     const { name, value } = event.target;
+    setFormFields({ ...formFields, [name]: value });
+  };
 
-    this.setState({ [name]: value });
-  }
-
-  render() {
-    return (
-      <div className='login'>
-        <h2 className='title'>I already have an account</h2>
-        <div className='info'>Sign in with your email and password</div>
-        <form onSubmit={this.onSubmit}>
-          <FormInput
-            name='email'
-            type='email'
-            autoComplete='username'
-            onChange={this.onChange}
-            value={this.state.email}
-            label='Email'
-            required
-          />
-          <FormInput
-            name='password'
-            type='password'
-            autoComplete='current-password'
-            value={this.state.password}
-            onChange={this.onChange}
-            label='Password'
-            required
-          />
-          <div className='buttons-container'>
-            <CustomButton type='submit'>Sign in</CustomButton>
-            <CustomButton
-              type='button'
-              onClick={signInWithGoogle}
-              isGoogleSignIn
-            >
-              Sign in with Google
-            </CustomButton>
-          </div>
-        </form>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="login">
+      <h2 className="title">I already have an account</h2>
+      <div className="info">Sign in with your email and password</div>
+      <form onSubmit={onSubmit}>
+        <FormInput
+          label="Email"
+          inputOptions={{
+            name: "email",
+            type: "email",
+            required: true,
+            autoComplete: "username",
+            value: email,
+            onChange,
+          }}
+        />
+        <FormInput
+          label="Password"
+          inputOptions={{
+            name: "password",
+            type: "password",
+            required: true,
+            autoComplete: "current-password",
+            value: password,
+            onChange,
+          }}
+        />
+        <div className="buttons-container">
+          <CustomButton type="submit">Sign in</CustomButton>
+          <CustomButton
+            type="button"
+            buttonType="google"
+            onClick={logGoogleUser}
+          >
+            Sign in with Google
+          </CustomButton>
+          {/* <CustomButton
+            type="button"
+            buttonType="google"
+            onClick={signInWithGoogleRedirect}
+          >
+            Sign in with Google Redirect
+          </CustomButton> */}
+        </div>
+      </form>
+    </div>
+  );
+};
