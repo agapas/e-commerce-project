@@ -1,4 +1,4 @@
-.register {
+.sign-up {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
@@ -13,7 +13,7 @@
 }
 
 @media screen and (min-width: 1024px) and (orientation: landscape) {
-  .register {
+  .sign-up {
     width: calc(0.5 * (100vw - 350px));
     margin-bottom: 0;
   }

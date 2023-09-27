@@ -9,12 +9,12 @@ import { selectCurrentUser } from "./redux/user/user.selectors";
 
 import "./App.scss";
 
-import Header from "./components/header/header.component";
+import Navigation from "./components/navigation/navigation.component";
 
-import CheckoutPage from "./pages/checkout/checkout.component";
-import { HomePage } from "./pages/homepage/homepage.component";
-import { LogInAndRegisterPage } from "./pages/log-in-and-register/log-in-and-register.component";
-import { ShopPage } from "./pages/shop/shop.component";
+import CheckoutPage from "./routes/checkout/checkout.component";
+import { HomePage } from "./routes/homepage/homepage.component";
+import { Authentication } from "./routes/authentication/authentication.component";
+import { ShopPage } from "./routes/shop/shop.component";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -42,20 +42,16 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Header />
+        <Navigation />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
           <Route exact path="/checkout" component={CheckoutPage} />
           <Route
             exact
-            path="/login"
+            path="/auth"
             render={() =>
-              this.props.currentUser ? (
-                <Redirect to="/" />
-              ) : (
-                <LogInAndRegisterPage />
-              )
+              this.props.currentUser ? <Redirect to="/" /> : <Authentication />
             }
           />
         </Switch>

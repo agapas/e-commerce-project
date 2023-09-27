@@ -12,14 +12,14 @@ import {
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase";
 
-import "./log-in.styles.scss";
+import "./sign-in.styles.scss";
 
 const defaultFormFields = {
   email: "",
   password: "",
 };
 
-export const LogIn = () => {
+export const SignIn = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
@@ -64,7 +64,7 @@ export const LogIn = () => {
   };
 
   return (
-    <div className="login">
+    <div className="sign-in">
       <h2 className="title">I already have an account</h2>
       <div className="info">Sign in with your email and password</div>
       <form onSubmit={onSubmit}>

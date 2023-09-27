@@ -8,7 +8,7 @@ import {
   createAuthUserWithEmailAndPassword,
 } from "../../utils/firebase";
 
-import "./register.styles.scss";
+import "./sign-up.styles.scss";
 
 const defaultFormFields = {
   displayName: "",
@@ -17,7 +17,7 @@ const defaultFormFields = {
   confirmPassword: "",
 };
 
-export const Register = () => {
+export const SignUp = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
@@ -51,10 +51,10 @@ export const Register = () => {
   };
 
   return (
-    <div className="register">
+    <div className="sign-up">
       <h2 className="title">I do not have an account</h2>
       <div className="info">Register with your email and password</div>
-      <form className="register-form" onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>
         <FormInput
           label="Display Name"
           inputOptions={{

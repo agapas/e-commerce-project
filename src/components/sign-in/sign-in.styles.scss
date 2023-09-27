@@ -1,4 +1,4 @@
-.login {
+.sign-in {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
@@ -18,14 +18,14 @@
 }
 
 @media screen and (min-width: 1024px) and (orientation: landscape) {
-  .login {
+  .sign-in {
     width: calc(0.5 * (100vw - 350px));
     margin-bottom: 0;
   }
 }
 
 @media screen and (min-width: 1200px) and (orientation: landscape) {
-  .login .buttons-container {
+  .sign-in .buttons-container {
     flex-direction: row;
     justify-content: space-between;
 

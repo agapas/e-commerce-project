@@ -11,10 +11,10 @@ import { selectCurrentUser } from "../../redux/user/user.selectors";
 
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 
-import "./header.styles.scss";
+import "./navigation.styles.scss";
 
-const Header = ({ currentUser, hidden }) => (
-  <div className="header">
+const Navigation = ({ currentUser, hidden }) => (
+  <div className="navigation">
     <Link className="brand-container" to="/">
       <Logo className="logo" />
       <div className="name">Camera Shop</div>
@@ -28,7 +28,7 @@ const Header = ({ currentUser, hidden }) => (
           Sign Out
         </div>
       ) : (
-        <Link className="option" to="/login">
+        <Link className="option" to="/auth">
           Sign In
         </Link>
       )}
@@ -43,4 +43,4 @@ const mapStateToProps = createStructuredSelector({
   hidden: selectCartHidden,
 });
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps)(Navigation);
