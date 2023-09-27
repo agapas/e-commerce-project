@@ -33,7 +33,7 @@ export const SignIn = () => {
   //   []
   // );
 
-  const logGoogleUser = async () => {
+  const signInGoogleUser = async () => {
     const { user } = await signInWithGoogle();
     await createUserDocumentFromAuth(user);
   };
@@ -95,7 +95,7 @@ export const SignIn = () => {
           <CustomButton
             type="button"
             buttonType="google"
-            onClick={logGoogleUser}
+            onClick={signInGoogleUser}
           >
             Sign in with Google
           </CustomButton>

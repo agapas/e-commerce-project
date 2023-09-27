@@ -53,7 +53,7 @@ export const SignUp = () => {
   return (
     <div className="sign-up">
       <h2 className="title">I do not have an account</h2>
-      <div className="info">Register with your email and password</div>
+      <div className="info">Sign up with your email and password</div>
       <form onSubmit={onSubmit}>
         <FormInput
           label="Display Name"
