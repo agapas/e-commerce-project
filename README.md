@@ -16,8 +16,13 @@ Plans to add:
 - payment using the Stripe API,
 - contact page content,
 - typescript,
-- unit tests,
-- change into the nextJS app (creating separated app with the nextJS will be a better solution).
+- unit tests.
+
+Plans to improve:
+
+- update libraries,
+- change into the nextJS app (or create separated app with the nextJS),
+- replace github pages with a host provider like Vercel (up to 3 free projects only), Netlify, Firebase...
 
 ### Firebase project setup:
 
@@ -26,7 +31,9 @@ Plans to add:
 - use your own configuration of the Firebase web app (overwrite firebaseConfig variable in the `src/utils/firebase.js` with your data copied from web app in Firebase project settings)
 
 You should also add rules in the Firestore to restrict access to your database, for example:
-`rules_version = '2';
+
+```javascript
+rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /users/{userId} {
@@ -41,11 +48,12 @@ service cloud.firestore {
       allow read;
     }
   }
-}`
+}
+```
 
 ### Additional info
 
-The app is bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The app was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Currently it has updated some libraries to be able to run it locally, but I have plans to replacing this project with the NextJS app in the nearest future.
 
 ## Running the project
 
