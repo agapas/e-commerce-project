@@ -21,8 +21,8 @@ Plans to add:
 Plans to improve:
 
 - update libraries,
-- change into the nextJS app (or create separated app with the nextJS),
-- replace github pages with a host provider like Vercel (up to 3 free projects only), Netlify, Firebase...
+- change into the NextJS app (or create separated app with the NextJS),
+- replace github pages with a host provider like Vercel (up to 3 free projects only), Netlify or Firebase.
 
 ### Firebase project setup:
 
