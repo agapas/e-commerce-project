@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -20,7 +19,7 @@ const Navigation = ({ currentUser, hidden }) => (
       <div className="name">Camera Shop</div>
     </Link>
     <div className="menu-options">
-      <Link className="option" to="/shop">
+      <Link className="option" to="shop">
         Shop
       </Link>
       {currentUser ? (
@@ -28,7 +27,7 @@ const Navigation = ({ currentUser, hidden }) => (
           Sign Out
         </div>
       ) : (
-        <Link className="option" to="/auth">
+        <Link className="option" to="auth">
           Sign In
         </Link>
       )}

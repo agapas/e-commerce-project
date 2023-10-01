@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { CustomButton } from "../custom-button/custom-button.component";
 import { FormInput } from "../form-input/form-input.component";
@@ -37,6 +37,7 @@ export const SignUp = () => {
       await createUserDocumentFromAuth(user, { displayName });
       setFormFields(defaultFormFields);
     } catch (error) {
+      // auth error codes list: https://firebase.google.com/docs/auth/admin/errors
       if (error.code === "auth/email-already-in-use") {
         alert("cannot create user, email already in use");
       } else {

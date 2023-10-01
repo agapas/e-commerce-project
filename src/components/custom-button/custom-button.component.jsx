@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./custom-button.styles.scss";
 
 const BUTTON_TYPE_CLASSES = {

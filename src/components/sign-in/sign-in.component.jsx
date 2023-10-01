@@ -45,6 +45,7 @@ export const SignIn = () => {
       await signInAuthUserWithEmailAndPassword(email, password);
       setFormFields(defaultFormFields);
     } catch (error) {
+      // auth error codes list: https://firebase.google.com/docs/auth/admin/errors
       switch (error.code) {
         case "auth/wrong-password":
           alert("incorrect password for email");

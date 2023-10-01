@@ -1,27 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { HashRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
+import React from "react";
+import { render } from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
-import { store, persistor } from './redux/store';
+import { store, persistor } from "./redux/store";
 
-import './index.scss';
-import App from './App';
+import "./index.scss";
+import App from "./App";
 
-// Temporary fix for displaying images in dev and production (on Github Pages)
-// in the case when HashRouter and session storage are used together
-export const BASE_URL = process.env.NODE_ENV === 'development'
-  ? `${window.location.pathname}/`
-  : window.location.pathname;
+// TODO: fix rendering images when using BrowserRouter
+export const BASE_URL =
+  process.env.NODE_ENV === "development"
+    ? "e-commerce-project/"
+    : window.location.pathname;
 
-ReactDOM.render(
-  <Provider store={store}>
-    <HashRouter>
+render(
+  <React.StrictMode>
+    <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </PersistGate>
-    </HashRouter>
-  </Provider>,
-  document.getElementById('root')
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
